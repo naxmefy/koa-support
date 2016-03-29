@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "4.2"
+  - "4.3"
+  - "4.4"
+  - "5.7"
+  - "5.8"
+  - "5.9"
+
+before_script:
+  - npm install -g coveralls
+
+script:
+  - npm run test-cov
+
+after_script:
+  - cat ./coverage/lcov.info | coveralls
